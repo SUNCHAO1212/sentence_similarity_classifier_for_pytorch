@@ -1,0 +1,238 @@
+Average training batch loss at epoch 0: 4.3096
+Average training batch loss at epoch 1: 1.3226
+Average training batch loss at epoch 2: 1.2299
+Average validation fold loss at epoch 2: 1.1978
+Average training batch loss at epoch 3: 1.1761
+Average validation fold loss at epoch 3: 1.1668
+
+Average training batch loss at epoch 0: 4.4641
+
+Average training batch loss at epoch 1: 1.3245
+
+Average training batch loss at epoch 2: 1.2111
+Average validation fold loss at epoch 2: 1.1319
+
+Average training batch loss at epoch 3: 1.1441
+Average validation fold loss at epoch 3: 1.1447
+
+Average training batch loss at epoch 4: 1.1220
+Average validation fold loss at epoch 4: 1.0783
+
+Average training batch loss at epoch 5: 1.0697
+Average validation fold loss at epoch 5: 1.0545
+
+Average training batch loss at epoch 6: 1.0476
+Average validation fold loss at epoch 6: 1.0444
+
+Average training batch loss at epoch 7: 1.0213
+Average validation fold loss at epoch 7: 1.0131
+
+Average training batch loss at epoch 8: 1.0062
+Average validation fold loss at epoch 8: 1.0062
+
+Average training batch loss at epoch 9: 0.9539
+Average validation fold loss at epoch 9: 0.9898
+
+Average training batch loss at epoch 10: 0.9456
+Average validation fold loss at epoch 10: 0.9675
+
+Average training batch loss at epoch 11: 0.9354
+Average validation fold loss at epoch 11: 0.9625
+
+Average training batch loss at epoch 12: 0.9015
+Average validation fold loss at epoch 12: 0.9427
+
+Average training batch loss at epoch 13: 0.8800
+Average validation fold loss at epoch 13: 0.9401
+
+Average training batch loss at epoch 14: 0.8468
+Average validation fold loss at epoch 14: 0.9215
+
+Average training batch loss at epoch 15: 0.8091
+Average validation fold loss at epoch 15: 0.8904
+
+Average training batch loss at epoch 16: 0.8019
+Average validation fold loss at epoch 16: 0.8901
+
+Average training batch loss at epoch 17: 0.7647
+Average validation fold loss at epoch 17: 0.8775
+
+Average training batch loss at epoch 18: 0.7376
+Average validation fold loss at epoch 18: 0.8722
+
+Average training batch loss at epoch 19: 0.7219
+Average validation fold loss at epoch 19: 0.8447
+
+Average training batch loss at epoch 20: 0.6811
+Average validation fold loss at epoch 20: 0.8177
+
+Average training batch loss at epoch 21: 0.6635
+Average validation fold loss at epoch 21: 0.8272
+
+Average training batch loss at epoch 22: 0.6413
+Average validation fold loss at epoch 22: 0.7919
+
+Average training batch loss at epoch 23: 0.6077
+Average validation fold loss at epoch 23: 0.7929
+
+Average training batch loss at epoch 24: 0.5891
+Average validation fold loss at epoch 24: 0.7695
+
+Average training batch loss at epoch 25: 0.5612
+Average validation fold loss at epoch 25: 0.7350
+
+Average training batch loss at epoch 26: 0.5447
+Average validation fold loss at epoch 26: 0.7345
+
+Average training batch loss at epoch 27: 0.5270
+Average validation fold loss at epoch 27: 0.7379
+
+Average training batch loss at epoch 28: 0.5131
+Average validation fold loss at epoch 28: 0.7347
+
+Average training batch loss at epoch 29: 0.4888
+Average validation fold loss at epoch 29: 0.7121
+
+Average training batch loss at epoch 30: 0.4728
+Average validation fold loss at epoch 30: 0.7029
+
+Average training batch loss at epoch 31: 0.4630
+Average validation fold loss at epoch 31: 0.7035
+
+Average training batch loss at epoch 32: 0.4470
+Average validation fold loss at epoch 32: 0.6882
+
+Average training batch loss at epoch 33: 0.4234
+Average validation fold loss at epoch 33: 0.6830
+
+Average training batch loss at epoch 34: 0.4138
+Average validation fold loss at epoch 34: 0.6698
+
+Average training batch loss at epoch 35: 0.4006
+Average validation fold loss at epoch 35: 0.6704
+
+Average training batch loss at epoch 36: 0.3871
+Average validation fold loss at epoch 36: 0.6684
+
+Average training batch loss at epoch 37: 0.3737
+Average validation fold loss at epoch 37: 0.6881
+
+Average training batch loss at epoch 38: 0.3665
+Average validation fold loss at epoch 38: 0.6641
+
+Average training batch loss at epoch 39: 0.3565
+Average validation fold loss at epoch 39: 0.6403
+
+Average training batch loss at epoch 40: 0.3519
+Average validation fold loss at epoch 40: 0.6283
+
+Average training batch loss at epoch 41: 0.3350
+Average validation fold loss at epoch 41: 0.6373
+
+Average training batch loss at epoch 42: 0.3291
+Average validation fold loss at epoch 42: 0.6502
+
+Average training batch loss at epoch 43: 0.3171
+Average validation fold loss at epoch 43: 0.6401
+
+Average training batch loss at epoch 44: 0.3167
+Average validation fold loss at epoch 44: 0.6353
+
+Average training batch loss at epoch 45: 0.3035
+Average validation fold loss at epoch 45: 0.6228
+
+Average training batch loss at epoch 46: 0.2903
+Average validation fold loss at epoch 46: 0.6115
+
+Average training batch loss at epoch 47: 0.2910
+Average validation fold loss at epoch 47: 0.6163
+
+Average training batch loss at epoch 48: 0.2804
+Average validation fold loss at epoch 48: 0.6094
+
+Average training batch loss at epoch 49: 0.2838
+Average validation fold loss at epoch 49: 0.6103
+
+Average training batch loss at epoch 50: 0.2740
+Average validation fold loss at epoch 50: 0.6141
+
+Average training batch loss at epoch 51: 0.2743
+Average validation fold loss at epoch 51: 0.6100
+
+Average training batch loss at epoch 52: 0.2690
+Average validation fold loss at epoch 52: 0.6015
+
+Average training batch loss at epoch 53: 0.2649
+Average validation fold loss at epoch 53: 0.5993
+
+Average training batch loss at epoch 54: 0.2640
+Average validation fold loss at epoch 54: 0.5965
+
+Average training batch loss at epoch 55: 0.2631
+Average validation fold loss at epoch 55: 0.5905
+
+Average training batch loss at epoch 56: 0.2542
+Average validation fold loss at epoch 56: 0.5915
+
+Average training batch loss at epoch 57: 0.2547
+Average validation fold loss at epoch 57: 0.5877
+
+Average training batch loss at epoch 58: 0.2505
+Average validation fold loss at epoch 58: 0.5849
+
+Average training batch loss at epoch 59: 0.2493
+Average validation fold loss at epoch 59: 0.5793
+
+Average training batch loss at epoch 60: 0.2465
+Average validation fold loss at epoch 60: 0.5873
+
+Average training batch loss at epoch 61: 0.2436
+Average validation fold loss at epoch 61: 0.5850
+
+Average training batch loss at epoch 62: 0.2426
+Average validation fold loss at epoch 62: 0.5789
+
+Average training batch loss at epoch 63: 0.2365
+Average validation fold loss at epoch 63: 0.5751
+
+Average training batch loss at epoch 64: 0.2350
+Average validation fold loss at epoch 64: 0.5812
+
+Average training batch loss at epoch 65: 0.2332
+Average validation fold loss at epoch 65: 0.5805
+
+Average training batch loss at epoch 66: 0.2308
+Average validation fold loss at epoch 66: 0.5694
+
+Average training batch loss at epoch 67: 0.2241
+Average validation fold loss at epoch 67: 0.5705
+
+Average training batch loss at epoch 68: 0.2259
+Average validation fold loss at epoch 68: 0.5811
+
+Average training batch loss at epoch 69: 0.2247
+Average validation fold loss at epoch 69: 0.5679
+
+Average training batch loss at epoch 70: 0.2240
+Average validation fold loss at epoch 70: 0.5629
+
+Average training batch loss at epoch 71: 0.2182
+Average validation fold loss at epoch 71: 0.5701
+
+Average training batch loss at epoch 72: 0.2186
+Average validation fold loss at epoch 72: 0.5695
+
+Average training batch loss at epoch 73: 0.2145
+Average validation fold loss at epoch 73: 0.5721
+
+Average training batch loss at epoch 74: 0.2126
+Average validation fold loss at epoch 74: 0.5650
+
+Average training batch loss at epoch 75: 0.2082
+Average validation fold loss at epoch 75: 0.5572
+
+Average training batch loss at epoch 76: 0.2028
+Average validation fold loss at epoch 76: 0.5605
+
+Average training batch loss at epoch 77: 0.2056
+Average validation fold loss at epoch 77: 0.5599
