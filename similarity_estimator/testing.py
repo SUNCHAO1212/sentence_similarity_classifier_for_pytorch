@@ -34,6 +34,8 @@ total_classification_divergence = 0.0
 total_classification_loss = 0.0
 
 # Test loop
+prediction_list = []
+label_list = []
 for i, data in enumerate(shuffled_loader):
     # Upon completion
     if i >= opt.num_test_samples:
@@ -50,10 +52,15 @@ for i, data in enumerate(shuffled_loader):
     s1_var, s2_var, label_var = data
     # Get predictions and update tracking values
     classifier.test_step(s1_var, s2_var, label_var)
-    # prediction from [0, 1] to [1, 5]
-    prediction = classifier.prediction * 4.0 + 1.0
+    prediction = classifier.prediction
+    print((prediction))
+    if prediction.data[0] > 0.0001:
+        prediction_list.append(1.0)
+    else:
+        prediction_list.append(0.0)
+    label_list.append(((label_var - 1.0) / 4.0).data[0][0])
     loss = classifier.loss.data[0]
-    divergence = torch.abs((prediction - label_var).data[0])
+    divergence = torch.abs((prediction - (label_var - 1.0) / 4.0).data[0])
     total_classification_divergence += divergence
     total_classification_loss += loss
 
@@ -69,4 +76,23 @@ for i, data in enumerate(shuffled_loader):
           'Ground truth: %.4f\n'
           'Divergence: %.4f\n'
           'Loss: %.4f\n' %
-          (i, sentence_a, sentence_b, prediction.data[0], label_var.data[0][0], divergence, loss))
+          (i, sentence_a, sentence_b, prediction.data[0], (label_var.data[0][0] - 1.0) / 4.0, divergence, loss))
+    with open('models/test_record.txt', 'a+') as fo:
+        fo.write('\nSample: %d\n'
+          'Sentence A: %s\n'
+          'Sentence B: %s\n'
+          'Prediction: %.4f\n'
+          'Ground truth: %.4f\n'
+          'Divergence: %.4f\n'
+          'Loss: %.4f\n' %
+          (i, sentence_a, sentence_b, prediction.data[0], (label_var.data[0][0] - 1.0) / 4.0, divergence, loss))
+print(prediction_list)
+print(label_list)
+accuracy = 0
+for i in range(len(prediction_list)):
+    if prediction_list[i] == label_list[i]:
+        accuracy += 1
+    else:
+        pass
+print('Accuracy = %f' % (accuracy/len(prediction_list)))
+

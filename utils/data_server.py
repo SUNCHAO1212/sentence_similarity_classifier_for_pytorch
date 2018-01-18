@@ -79,7 +79,9 @@ class DataServer(object):
             else:
                 s1_batch, s2_batch, label_batch = self.corpus_next()
         except IndexError:
+            # print(IndexError)
             raise StopIteration
+            # pass
 
         # Covert batches into batch major form
         s1_batch = torch.LongTensor(s1_batch).t().contiguous()

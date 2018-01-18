@@ -21,16 +21,15 @@ class TestingOptions(object):
         self.train_batch_size = 16
         self.test_batch_size = 1
         self.clip_value = 0.25
-        # default 0.0001
         self.learning_rate = 0.0001
         self.beta_1 = 0.5
 
         self.pre_training = True
-        self.num_epochs = 100
+        self.num_epochs = 500
 
-        self.start_early_stopping = 2
-        # default = 10
-        self.patience = 5
+        self.start_early_stopping = 4
+
+        self.patience = 10
         self.start_annealing = 4
         # default 0.75
         self.annealing_factor = 0.5

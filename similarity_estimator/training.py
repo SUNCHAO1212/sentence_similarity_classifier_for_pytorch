@@ -39,7 +39,8 @@ if opt.pre_training:
 else:
     save_dir = opt.save_dir
     # Extend the corpus with synthetic data
-    source_corpus_path = os.path.join(opt.data_dir, 'SICK.txt')
+    source_corpus_path = os.path.join(opt.data_dir, 'se100.txt')
+    # source_corpus_path = os.path.join(opt.data_dir, 'SICK.txt')
     language_model_path = os.path.join(opt.data_dir, 'sick_lm.klm')
     extended_corpus_path = os.path.join(opt.data_dir, 'extended_sick.txt')
     extender = SickExtender(source_corpus_path, opt.data_dir, lm_path=language_model_path)
@@ -69,7 +70,7 @@ else:
 learning_rate = opt.learning_rate
 
 # Initialize global tracking variables
-best_validation_loss = 100
+best_validation_loss = 10
 epochs_without_improvement = 0
 final_epoch = 0
 
@@ -89,8 +90,10 @@ for epoch in range(opt.num_epochs):
     # Training loop
     for i, data in enumerate(train_loader):
         # Obtain data
+        """one column means one sentence, sequence = 21, the value is the index of word embedding"""
         s1_var, s2_var, label_var = data
         classifier.train_step(s1_var, s2_var, label_var)
+
         train_batch_loss = classifier.loss.data[0]
 
         running_loss.append(train_batch_loss)
@@ -98,15 +101,19 @@ for epoch in range(opt.num_epochs):
 
         if i % opt.report_freq == 0 and i != 0:
             running_avg_loss = sum(running_loss) / len(running_loss)
-            # print('Epoch: %d | Training Batch: %d | Average loss since batch %d: %.4f' %
-            #       (epoch, i, i - opt.report_freq, running_avg_loss))
+            print('Epoch: %d | Training Batch: %d | Average loss since batch %d: %.4f' %
+                  (epoch, i, i - opt.report_freq, running_avg_loss))
+            with open('models/loss_record.txt', 'a+') as fo:
+                fo.write(str(running_avg_loss))
+                fo.write('\n')
             running_loss = list()
 
     # Report epoch statistics
     avg_training_loss = sum(total_train_loss) / len(total_train_loss)
     print('Average training batch loss at epoch %d: %.4f' % (epoch, avg_training_loss))
-    with open('models/training_record.txt', 'a+') as fo:
-        fo.write('\nAverage training batch loss at epoch %d: %.4f\n' % (epoch, avg_training_loss))
+    with open('models/avg_loss_record.txt', 'a+') as fo:
+        fo.write(str(avg_training_loss))
+        fo.write('\n')
 
     # Validate after each epoch; set tracking variables
     if epoch >= opt.start_early_stopping:
@@ -127,8 +134,6 @@ for epoch in range(opt.num_epochs):
         # Report fold statistics
         avg_valid_loss = sum(total_valid_loss) / len(total_valid_loss)
         print('Average validation fold loss at epoch %d: %.4f' % (epoch, avg_valid_loss))
-        with open('models/training_record.txt', 'a+') as fo:
-            fo.write('Average validation fold loss at epoch %d: %.4f\n' % (epoch, avg_valid_loss))
         # Save network parameters if performance has improved
         if avg_valid_loss >= best_validation_loss:
             epochs_without_improvement += 1
@@ -137,6 +142,7 @@ for epoch in range(opt.num_epochs):
             epochs_without_improvement = 0
             save_network(classifier.encoder_a, 'sim_classifier', 'latest', save_dir)
         print('average validation loss: %f. best validation loss: %f' % (avg_valid_loss, best_validation_loss))
+
     # Save network parameters at the end of each nth epoch
     if epoch % opt.save_freq == 0 and epoch != 0:
         print('Saving model networks after completing epoch %d' % epoch)
@@ -151,23 +157,17 @@ for epoch in range(opt.num_epochs):
 
     # Terminate training early, if no improvement has been observed for n epochs
     if epochs_without_improvement >= opt.patience:
-        print('Stopping training early after %d epochs, following %d epochs without performance improvement.' %
+        print('\nStopping training early after %d epochs, following %d epochs without performance improvement.' %
               (epoch, epochs_without_improvement))
-        with open('models/training_record.txt', 'a+') as fo:
-            fo.write('Stopping training early after %d epochs, following %d epochs without performance improvement.\n' %
-                  (epoch, epochs_without_improvement))
         final_epoch = epoch
         break
 
 print('Training procedure concluded after %d epochs total. Best validated epoch: %d.'
       % (final_epoch, final_epoch - opt.patience))
-with open('models/training_record.txt', 'a+') as fo:
-    fo.write('Training procedure concluded after %d epochs total. Best validated epoch: %d.\n'
-      % (final_epoch, final_epoch - opt.patience))
 
 if opt.pre_training:
     # Save pretrained embeddings and the vocab object
-    pretrained_path = os.path.join(save_dir, 'pretrained.pkl')
+    pretrained_path = os.path.join(save_dir, 'extended_vocab.pkl')
     pretrained_embeddings = classifier.encoder_a.embedding_table.weight.data
     with open(pretrained_path, 'wb') as f:
         pickle.dump((pretrained_embeddings, vocab), f)

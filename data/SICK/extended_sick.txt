@@ -1,0 +1,11 @@
+A player is running with the ball	A player is running with the ball	5.0
+a woman is slicing potatoes	a woman is cutting potatoes	4.87
+a woman is slicing potatoes	potatoes are being sliced by a woman	4.38
+a woman is slicing potatoes	tofu is being sliced by a woman	3.51
+a boy is waving at some young runners from the ocean	a group of men is playing with a ball on the beach	3.13
+a boy is waving at some young runners from the ocean	a young boy wearing a red swimsuit is jumping out of a blue kiddies pool	3.48
+a boy is waving at some young runners from the ocean	the man is tossing a kid into the swimming pool that is near the ocean	2.26
+two men are playing guitar	the man is singing and playing the guitar	3.53
+two men are playing guitar	the man is opening the guitar for donations and plays with the case	2.30
+two men are playing guitar	two men are dancing and singing in front of a crowd	2.33
+two men are playing guitar	two men are dancing and singing in front of a crowd	2.33

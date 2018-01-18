@@ -97,8 +97,11 @@ def load_similarity_data(opt, corpus_location, corpus_name):
     for i in range(len(df_sim['relatedness_score'])):
         sent_a = df_sim.iloc[i, 0].strip()
         sent_b = df_sim.iloc[i, 1].strip()
-        label = "{:.4f}".format(float(df_sim.iloc[i, 2]))
-
+        try:
+            label = "{:.4f}".format(float(df_sim.iloc[i, 2]))
+        except Exception as e:
+            print(e)
+            continue
         # Assemble a list of tuples containing the compared sentences, while tracking the maximum observed length
         sim_data[0].append((sent_a, sent_b))
         sim_data[1].append(label)
