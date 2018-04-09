@@ -2,7 +2,7 @@
 An implementation of Mueller's et al.,  "Siamese Recurrent Architectures for Learning Sentence Similarity." 
 A detailed documentation is forthcoming. For now, refer to the paper for clarity.
 
-<<<<<<< HEAD
+<<<<<<< 
 LSTM with attention, clear useless files
 =======
 If there is a word in testing set but not in training set, it will raise a 'keyerror'. But I don't know how to fix it. 
